@@ -10,7 +10,7 @@ docker compose up odoo16
 
 ### Odoo 13.0
 ```
-cd odoo16
+cd odoo13
 docker compose up odoo13
 ```
 
