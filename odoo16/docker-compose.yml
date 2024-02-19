@@ -9,8 +9,8 @@ services:
       - odoo16db
     volumes:
       - odoo16-file-data:/var/lib/odoo
-      - ./odoo16.conf:/etc/odoo/odoo.conf
-      - ./odoo16addons:/mnt/extra-addons
+      - ./odoo.conf:/etc/odoo/odoo.conf
+      - ./addons:/mnt/extra-addons
     ports:
       - "8069:8069"
     environment:
