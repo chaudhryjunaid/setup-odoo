@@ -1,0 +1,25 @@
+version: '3.8'
+volumes:
+  odoo16-file-data:
+  odoo16-db-data:
+services:
+  odoo16:
+    image: odoo:16.0
+    depends_on:
+      - odoo16db
+    volumes:
+      - odoo16-file-data:/var/lib/odoo
+      - ./odoo16.conf:/etc/odoo/odoo.conf
+      - ./odoo16addons:/mnt/extra-addons
+    ports:
+      - "8069:8069"
+    environment:
+      - HOST=odoo16db
+  odoo16db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=odoo
+      - POSTGRES_USER=odoo
+    volumes:
+      - odoo16-db-data:/var/lib/postgresql/data
