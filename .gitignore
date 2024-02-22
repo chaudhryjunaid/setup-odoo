@@ -1,3 +1,5 @@
-odoo16/addons/*
-odoo16/odoo16.conf
+odoo13/addons
+odoo13/odoo.conf
+odoo16/addons
+odoo16/odoo.conf
 
